@@ -10,6 +10,7 @@ license=('AGPL3')
 depends=('git' 'nodejs')
 makedepends=('git')
 backup=(opt/sparkelshare-dashboard/config.js)
+install=sparkleshare-dashboard.install
 source=()
 md5sums=()
 _gitroot="git://github.com/triplem/SparkleShare-Dashboard.git"
@@ -38,11 +39,11 @@ package() {
   cd ${srcdir}/${_gitname-build}
 
   install -m755 -d ${pkgdir}/usr/share/licenses/sparkleshare-dashboard
-  install -m755 -d ${pkgdir}/opt/sparkelshare-dashboard
+  install -m755 -d ${pkgdir}/opt/sparkleshare-dashboard
 
   cp LICENSE ${pkgdir}/usr/share/licenses/sparkleshare-dashboard
-  cp -rf * ${pkgdir}/opt/sparkelshare-dashboard
+  cp -rf * ${pkgdir}/opt/sparkleshare-dashboard
 
-  cd ${pkgdir}/opt/sparkelshare-dashboard
+  cd ${pkgdir}/opt/sparkleshare-dashboard
   npm -d install   
 }
